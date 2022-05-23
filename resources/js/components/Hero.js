@@ -1,0 +1,98 @@
+import React from 'react'
+import '../../css/app.css'
+const Hero = () => {
+    return (
+        <section>
+            <div className="intro-logo jumbo-bg">
+              <h1>Polytechnique Clubs</h1>
+              <h3>Fondée en 2009, L’Ecole Polytechnique de Sousse est une grande école privée d’enseignement et de recherche à vocation internationale.</h3>
+              
+              <div className="intro-button">
+                <a href="https://www.polytecsousse.tn/">Site Web officiel</a>
+              </div>
+            </div>
+      
+            <style jsx>{`
+              header {
+                margin-bottom: 1rem;
+                height: 100vh;
+              }
+              .intro-logo {
+                display: flex;
+                position: absolute;
+                top: 5em;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+              }
+      
+              .intro-logo h1 {
+                font-size: 1.8em;
+                font-weight: 900;
+                font-family: 'Philosopher', sans-serif;
+                color: var(--brand-color);
+              }
+              @media (min-width: 768px) {
+                .intro-logo h1 {
+                  font-size: 3.5em;
+                }
+              }
+              .intro-logo h3 {
+                font-size: 1rem;
+                font-weight: 300;
+                color: var(--gray-color-1);
+                margin-bottom: 3em;
+              }
+              .intro-logo img {
+                max-width: 95%;
+                height: auto;
+              }
+              .company-icons__item + .company-icons__item {
+                margin-left: 1rem;
+              }
+              @media (min-width: 575px) {
+                .company-icons__item + .company-icons__item {
+                  margin-left: 2rem;
+                }
+              }
+              .company-icons__item i {
+                margin-right: 5px;
+              }
+              .intro-button {
+                margin-top: 2.3em;
+                margin-bottom: 3em;
+              }
+              .intro-button a {
+                padding: 0.65em 2.6em;
+                border-radius: 20px;
+                color: #FFA800;
+                border: 1.8px solid #FFA800;
+                background: white;
+                transition: all 0.5s;
+              }
+              .intro-button a:hover {
+                background-color: #FFA800;
+                color: white;
+              }
+      
+              .company-icons {
+                color: var(--gray-color-2);
+                font-size: 0.95em;
+              }
+              .company-icons__item {
+                transition: all 0.5s;
+              }
+              .company-icons__item:hover {
+                color: var(--brand-color);
+                cursor: pointer;
+              }
+            `}</style>
+        </section>
+        
+    )}
+export default Hero
+  

@@ -9,8 +9,8 @@
     <!-- Portfolio Item Row -->
     <div class="row">
   
-      <div class="col-md-8">
-        <img class="img-fluid" src="{{ Voyager::image( $event->image_event ) }}" alt="">
+      <div class="col-md-7">
+        <img class="img-fluid" style="max-height:600px;max-width:500px;height:auto;" src="{{ Voyager::image( $event->image_event ) }}" alt="">
       </div>
   
       <div class="col-md-4">
@@ -24,112 +24,108 @@
         <ul>
           <li>{{($event->date_fin_event)}}</li>
         </ul>
-        <span class="my-3">Orgénisé par:</span>
+        <span class="my-3">Prix :</span>
         <ul>
-          <li></li>
+          <li>{{($event->price)}}</li>
+        </ul>
+        <span class="my-3">Club Page :</span>
+        <ul>
+          <li><a href="/clubs/clubdetails/{{$event->club_id}}">Club Page</a></li>
         </ul>
       </div>
   
     </div>
     <!-- /.row -->
   
-    <!-- Related Projects Row -->
-    <h3 class="my-4">Comments</h3>
-       
-    {{--
-    <div class="mt-50 mb-100">
-      <div class="container">
+
+    <div class="col-lg-12">
+      <div class="card mt-4 border-0 mb-4">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="single-article-section">
-  
-              <div class="comments-list-wrap">
-                <h3 class="comment-count-title">{{$nbTotal}} Comments</h3>
-                <div class="comment-list">
-                
-                  <div class="single-comment-body">
-                  @foreach ($comments as $comment)
-                  <div class="single-comment-body">
-                  @foreach ($users as $user)
-                      @if($user->id == $comment->user_id)
-                    <div class="comment-user-avater">
-                      <img src="{{ Voyager::image( $user->avatar ) }}" alt="">
-                    </div>
-                    <div class="comment-text-body">
-                    
-                      <h4> <span id="userId">{{$user->name}} </span> 
-                        <span class="comment-date">{{$comment->created_at}}</span> 
-                        <button class="btn-reply" id="btnReply" onclick="
-                          var button = document.getElementById('btnReply');
-                          var text = document.getElementById('userId');
-                          var reply = document.getElementById('replyId');
-                          var comment = document.getElementById('comment');
-                            comment.placeholder = 'Comment on \' '+text.innerText+'\' comment ';
-                            reply.value = {{$comment->id}}	
-                        "><label for="comment">reply</label></button>
-                        
-                      </h4>
-                      <h4></h4>
-                      @endif
-                    @endforeach
-                      <p>{{$comment->comment}}</p>
-                    </div>
-                  </div>
-                  
-                    @foreach ($reps as $rep)
-                    @if($rep->reply == $comment->id)
-                    <div class="single-comment-body child">
-                    @foreach ($users as $user)
-                      @if($user->id == $rep->user_id)
-                      <div class="comment-user-avater">
-                        <img src="{{ Voyager::image( $user->avatar ) }}" alt="">
-                      </div>
-                      <div class="comment-text-body">
-                        <h4>{{$user->name}} <span class="comment-date">{{$rep->created_at}}</span> </h4>
-                        @endif
-                    @endforeach
-                        <p>{{$rep->comment}}</p>
-                      </div>
-                    </div>
-                    @endif
-                    @endforeach
-                  @endforeach
-                </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="card-body d-flex align-items-center c-detail pl-0">
+              <div class="mr-3 align-self-center">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png">
               </div>
-  
-              @if(Auth::check())
-              <div class="comment-template col-lg-9">
-                <h4>Leave a comment</h4>
-                <p>If you have a comment dont feel hesitate to send us your opinion.</p>
-                <form action="{{$event->id}}/store" method="POST">
-                @csrf
-                  <input type="hidden" name="id_event" value="{{ $event->id }}">
-                  <input type="hidden" id="replyId" name="reply" value="">
-                  <input type="hidden" name="user" value="{{ Auth::id() }}">
-                  <p><textarea name="comment" id="comment" name="comment" cols="30" rows="10" placeholder="Qu'en pensez-vous ?"></textarea></p>
-                  <p><input type="submit" value="Poster mon commentaire"></p>
-                </form>
+              <div class="">
+                <h6 class="font-weight-medium">Address</h6>
+                <p class="">{{($event->place)}}
               </div>
-              @endif
-              @if(!(Auth::check()))
-              <div class="comment-template col-lg-9">
-                <h4>Leave a comment</h4>
-                <p>Pour pouvoir faire un commentaire, vous devez vous connecter.
-                  <a href="/admin/login">Commectez-Vous </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="card-body d-flex align-items-center c-detail">
+              <div class="mr-3 align-self-center">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png">
+              </div>
+              <div class="">
+                <h6 class="font-weight-medium">Phone</h6>
+                <p class="">--------------
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <div class="card-body d-flex align-items-center c-detail">
+              <div class="mr-3 align-self-center">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png">
+              </div>
+              <div class="">
+                <h6 class="font-weight-medium">Email</h6>
+                <p class="">
+                  {{($event->email)}}
+                  <br>
                 </p>
-                
               </div>
-              @endif
-  --}}
-              
             </div>
           </div>
         </div>
       </div>
     </div>
-  
-  
-  </div>
-  <!-- /.container -->
-  
+
+
+<section class="content-item" id="comments">
+  <div class="container">   
+    <h3>{{$nbTotal}} Comments</h3>
+    <div class="row">
+      @foreach ($comments as $comment)
+      <div class="col-sm-8">
+        <div class="media">
+        @foreach ($users as $user)
+        @if($user->id == $comment->id_user)
+                <div class="media-body">
+                  <a ><img class="media-object" style="float: left;" src="{{ Voyager::image( $user->avatar ) }}">
+                  </a>
+                  <h4 class="media-heading">{{$user->name}}</h4>
+                  
+                  <ul class="list-unstyled list-inline media-detail pull-left">
+                    <li><i class="fa fa-calendar"></i>{{$comment->created_at}}</li>
+                  </ul>
+                  <p>{{$comment->comment_text}}</p>
+                </div>
+						@endif
+            @endforeach
+            </div>
+          </div>
+            @endforeach
+              @if(Auth::check())
+              <form action='{{$event->id}}/store' method="POST">
+                @csrf
+                <input type="hidden" name="id_event" value="{{ $event->id }}">
+								<input type="hidden" name="user" value="{{ Auth::id() }}">
+                <h3 class="pull-left">New Comment</h3>
+                  <fieldset>
+                      <div class="row">
+                          <div class="form-group col-xs-12 col-sm-9 col-lg-10">
+                              <textarea class="form-control" id="message" name="message"placeholder="Your message" required=""></textarea>
+                          </div>
+                      </div>
+                  </fieldset>
+                  <button type="submit" class="btn btn-normal pull-right">Submit Comment</button>
+              </form>
+              
+						@endif
+          </div>
+        </div>
+        </div>    
+  </section>
+</div>
 @endsection

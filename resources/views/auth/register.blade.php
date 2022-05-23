@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="login-container">
-        <p>{{ __('voyager::Register.signin_below') }}</p>
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group form-group-default" id="nameGroup">
@@ -64,7 +63,7 @@
 
             <div class="row mb-0">
                     <button  type="submit" class="btn btn-primary">
-                        {{ __('voyager::generic.store') }}
+                        register
                     </button>
             </div>
 

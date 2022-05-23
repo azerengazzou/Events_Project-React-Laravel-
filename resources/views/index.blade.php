@@ -1,35 +1,60 @@
 @extends('layouts.app')
-
 @section('content')
-    
-    <div class="site-section bg-white">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-7 text-center mb-5">
-            <h2 class=" text-center">Our Events</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum necessitatibus eius earum voluptates sed!</p>
-          </div>
-        </div>
-        <div class="row">
-        @foreach ($Events as $even)
-        
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="post-entry-1 h-100">
-              <a href="events/eventdetails/{{$even->id}}">
-                <img src="{{ Voyager::image( $even->image_event ) }}" alt="Image" class="img-fluid">
-              </a>
-              <div class="post-entry-1-contents">            
-                <h2><a href="events/eventdetails/{{$even->id}}">{{$even->nom_event}}</a></h2>
-                <span class="meta d-inline-block mb-3">{{$even->date_debut_event}} <span class="mx-2"></span>
-              </div>
+{{-- <section id="speakers">
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Nos deriniers évènements</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="row">
+      @foreach ($Events as $even)
+      <div class="col-lg-4 col-md-6">
+        <div class="speaker aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+          <img src="{{ Voyager::image( $even->image_event ) }}" alt="Speaker 1" class="img-fluid">
+          <div class="details">
+            <h3><a href="events/eventdetails/{{$even->id}}">{{$even->nom_event}}</a></h3>
+            <p>{{$even->email}}</p>
+            <div class="social">
+              <a href=""><i class="bi bi-twitter"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
-        
-        @endforeach
+        </div>
       </div>
-    
+      @endforeach
+    </div>
   </div>
-   
+</section>
+
+<section id="hotels" class="section-with-bg">
+
+  <div class="container aos-init aos-animate" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Nos Clubs</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+      @foreach ($Clubs as $club)
+      <div class="col-lg-4 col-md-6">
+        <div class="hotel">
+          <div class="hotel-img">
+            <img src="{{ Voyager::image( $club->image ) }}" alt="Hotel 1" class="img-fluid">
+          </div>
+          <h3><a href="clubs/clubdetails/{{$club->id}}">{{$club->nom_club}}</a></h3>
+          <p>Members : {{$club->members}}</p>
+        </div>
+      </div>
+      @endforeach
+    </div>
+  </div>
+</section> --}}
+<div id="example">
+  <script jsx="true" src="{{ asset('js/main.js') }}"></script>
+</div>
   @endsection
 
 

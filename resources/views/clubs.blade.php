@@ -2,6 +2,11 @@
 
 @section('content')
 <br><br><br>
+
+<div class="section-header">
+  <h2>List of our Clubs</h2>
+  <p>Here are some of our speakers</p>
+</div>
 <div class="site-section">
   <div class="container">
     @foreach ($Clubs as $club)
@@ -20,7 +25,7 @@
       </div>
     </div>
     @endforeach
-    
+  
   </div>
 </div>
 

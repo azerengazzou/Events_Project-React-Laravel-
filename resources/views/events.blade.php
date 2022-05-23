@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{--
 <div class="site-section">
   <div class="container">
     @foreach ($Events as $event)
@@ -18,6 +19,33 @@
     </div>
     @endforeach
     
+  </div>
+</div>
+
+
+
+--}}
+
+
+
+<div class="py-5 service-7">
+  <div class="container">
+      <!-- Row  -->
+      <div class="row">
+          <!-- Column -->
+          @foreach ($Events as $event)
+          <div class="col-md-4 mb-4">
+              <div class="">
+                  <img class="rounded img-fluid" style="max-height:300px;max-width:400px;height:auto;" src="{{ Voyager::image( $event->image_event ) }}" alt="wrappixel kit" />
+                  <div class="mt-4">
+                      <h6 class="font-weight-medium" >{{$event->nom_event}}</h6>
+                      <p class="m-1">{{$event->description}}</p>
+                      <a href="events/eventdetails/{{$event->id}}" class="btn btn-primary m-0">Details </a>
+                  </div>
+              </div>
+          </div>
+          @endforeach
+      </div>
   </div>
 </div>
 

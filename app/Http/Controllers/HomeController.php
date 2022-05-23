@@ -2,21 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Club;
 use Illuminate\Http\Request;
 use App\Event;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -25,6 +16,11 @@ class HomeController extends Controller
     public function index()
     {
         $Events = Event::latest()->paginate(3);
-        return view('index', compact('Events'));
+        $Clubs = Club::all();
+        
+        return response()->json([
+            'Events'=>$Events,
+            'Clubs'=>$Clubs
+        ]);
     }
 }

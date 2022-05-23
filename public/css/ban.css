@@ -1,0 +1,46 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.banner2 {
+  font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+  font-weight: 300;
+}
+
+.banner2 h1, .banner2 h2, .banner2 h3, .banner2 h4, .banner2 h5, .banner2 h6 {
+  color: #3e4555;
+}
+
+.banner2 a {
+	text-decoration: none;
+}
+
+.banner2 .btn-danger-gradiant {
+  background: #ff4d7e;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ff4d7e 0%, #ff6a5b 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff4d7e), to(#ff6a5b));
+  background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+}
+
+.banner2 .btn-danger-gradiant:hover {
+  background: #ff6a5b;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ff6a5b 0%, #ff4d7e 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff6a5b), to(#ff4d7e));
+  background: -webkit-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+  background: -o-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+  background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
+}
+
+.banner2 .btn-md {
+    padding: 15px 40px;
+    font-size: 16px;
+}
+
+.banner2 .text-danger {
+    color: #ff4d7e !important;
+}
+
+.banner2 .img-shadow {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.3);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.3);
+}
